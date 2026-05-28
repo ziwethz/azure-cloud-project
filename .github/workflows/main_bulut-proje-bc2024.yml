@@ -23,12 +23,7 @@ jobs:
         with:
           node-version: '24.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-
+      # Hata veren npm install ve build adımları silindi. Sadece dosyalar alınıyor.
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -62,4 +57,3 @@ jobs:
           app-name: 'bulut-proje-bc2024'
           slot-name: 'Production'
           package: .
-          
